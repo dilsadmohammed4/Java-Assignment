@@ -1,0 +1,131 @@
+
+import java.util.*;
+
+class Array {
+    int i, j, temp;
+    int[] array = new int[5];
+    int n = array.length;
+    Scanner input = new Scanner(System.in);
+
+    void arrayInput() {
+        for (i = 0; i < n; i++) {
+            System.out.print("Enter " + i + "th index Element:");
+            array[i] = input.nextInt();
+        }
+    }
+
+    public void showArray() {
+        System.out.print("Array:");
+        for (i = 0; i < n; i++) {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
+    }
+
+    public void bubbleSort() {
+        for (i = 0; i < n - 1; i++)
+            for (j = 0; j < n - i - 1; j++)
+                if (array[j] > array[j + 1]) {
+
+                    temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+
+                }
+        System.out.println("====================");
+        System.out.print("Bubble Sort Ascending Order:");
+        for (i = 0; i < n; ++i) {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
+
+        for (i = 0; i < n - 1; i++) {
+            for (j = 0; j < n - i - 1; j++) {
+                if (array[j] < array[j + 1]) {
+                    temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                }
+            }
+        }
+
+        System.out.print("Bubble Sort Descending Order:");
+
+        for (i = 0; i < n; i++) {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
+    }
+
+    void selectionsort() {
+
+        for (int i = 0; i < n - 1; i++) {
+            int min_idx = i;
+            for (int j = i + 1; j < n; j++)
+                if (array[j] < array[min_idx])
+                    min_idx = j;
+
+            int temp = array[min_idx];
+            array[min_idx] = array[i];
+            array[i] = temp;
+        }
+        System.out.println("====================");
+        System.out.print("Selection Sort Ascending Order:");
+
+        for (i = 0; i < n; i++) {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
+
+        for (int i = 0; i < n - 1; i++) {
+            int min_idx = i;
+            for (int j = i + 1; j < n; j++)
+                if (array[j] > array[min_idx])
+                    min_idx = j;
+
+            int temp = array[min_idx];
+            array[min_idx] = array[i];
+            array[i] = temp;
+        }
+        System.out.print("Selection Sort Desscending Order:");
+
+        for (i = 0; i < n; i++) {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
+    }
+
+    void insertionSort() {
+        for (i = 1; i < n; ++i) {
+            int key = array[i];
+            j = i - 1;
+
+            while (j >= 0 && array[j] > key) {
+                array[j + 1] = array[j];
+                j = j - 1;
+            }
+            array[j + 1] = key;
+        }
+
+        System.out.println("====================");
+        System.out.print("Insertion Sort Ascending Order:");
+
+        for (i = 0; i < n; i++) {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
+
+    }
+}
+
+public class Sorting {
+    public static void main(String[] args) {
+        Array a1 = new Array();
+        // Array a2 = new Array();
+        a1.arrayInput();
+        a1.showArray();
+        a1.bubbleSort();
+        a1.selectionsort();
+        a1.insertionSort();
+    }
+}

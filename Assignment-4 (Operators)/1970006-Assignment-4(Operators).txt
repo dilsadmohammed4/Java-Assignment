@@ -1,0 +1,135 @@
+Q1. Convert the temperature readings given in degree Fahrenheit to degree
+Celsius, using the following formula :
+ C = (5/9) * (F- 32)
+Test these values in degree Fahrenheit using CMD: 68, 150, 212, 0, -22, -200.
+Answer:
+
+import java.util.Scanner;
+
+
+public class Assign4_I {
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        int F;
+        System.out.print("Enter the Fahrenheit value:");
+        F=input.nextInt();
+        double C;
+        C=(5.0/9.0)*(F-32);
+	System.out.println("Celcious="+C);
+    }
+    
+}
+
+=================******************==================
+
+Q2. Calculate the volume and surface area of a sphere using the following
+formula :
+
+V= 4/3 πr3
+A = 4 πr2
+π=3.14159
+Test the program using CMD for the given radius: 1, 6, 12.2,0.2.
+Answer:
+
+import java.util.Scanner;
+
+
+public class Assign4_II {
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        int r;
+        System.out.println("Enter the Radius:");
+        r=input.nextInt();
+        double V,A;
+        double pie=3.14159;
+        V=4.0/3.0*pie*r*r*r;
+        A=4.0*pie*r*r;
+        System.out.println("Volume of a Sphere="+V);
+        System.out.println("Surface area of a Sphere="+A);
+       
+    }
+    
+}
+
+======================***************=======================
+
+Q3. WAP in JAVA to find the smaller and greater number among two numbers
+read from CMD using ternary operator.
+Answer:
+
+import java.util.Scanner;
+
+
+public class Assign4_III {
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        int a,b,c;
+        System.out.print("Enter the 1st Number:");
+        a=input.nextInt();
+        System.out.print("Enter the 2nd Number:");
+        b=input.nextInt();
+        c=(a>b)?a:b;
+        System.out.println("Max number Is="+c);
+        
+    }
+    
+}
+
+
+=====================*******************=======================
+
+Q4. Write a program to show the use of ++, -- and different assignment
+operators.
+Answer:
+
+import java.util.Scanner;
+
+public class Assign4_IV {
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        int a,b;
+        System.out.print("Enter the a value=");
+        a=input.nextInt();
+        System.out.print("Enter the value of b=");
+        b=input.nextInt();
+        System.out.println("Value of a="+a);
+        a+=10;
+        System.out.println("a+="+a);
+        a-=10;
+        System.out.println("a-="+a);
+        a*=10;
+        System.out.println("a*="+a);
+        a/=10;
+        System.out.println("a/="+a);
+        b++;
+        System.out.println("I++="+b);
+        b--;
+        System.out.println("I--="+b);
+    }
+
+}
+
+
+========================***********************==========================
+
+Q5. WAP to observe the difference between – and ~ operators.
+Answer:
+import java.util.Scanner;
+
+public class Assign4_V {
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        int a,c,d;
+        System.out.print("Eneter the value of A=");
+        a=input.nextInt();
+        c=-a;
+        d=~a;
+        System.out.println("-a="+c);
+        System.out.println("~a="+d);
+        
+        
+    }
+    
+}
+
+======================******************================================

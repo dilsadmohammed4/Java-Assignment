@@ -1,0 +1,108 @@
+
+Q1. Define two numbers v and n, where v is the original number and n is the
+shifting value. Then shift the value of v to left (<<) and right (>>) up to n bits
+and print the new values. Also use the >>> operator for right shift and
+observe the difference between >> and >>>.
+Answer:-
+
+import java.util.Scanner;
+
+public class Assign3_I {
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        System.out.print("Enter the number:");
+        int v=input.nextInt();
+        System.out.print("Enter the shifting value:");
+        int n=input.nextInt();
+        System.out.println("V<<2="+(v<<n));
+        System.out.println("V>>2="+(v>>n));
+        System.out.println("V>>>2="+ (v>>>n));
+        //System.out.println("V<<<2"+ (v<<<n));
+        
+    }
+     
+}
+
+
+==============*************=======================
+
+Q2. Write a program to explain the use of (&, |, ^, ~) bitwise operators in Java.
+Define two numbers num1 and num2. Then store the result in num3 after
+using the operators given above. Print the value of num1, num2 and num3 to
+check the result.
+Answer:-
+
+public class Assign3_II {
+    public static void main(String[] args) {
+        int num1=5;
+        int num2=7;
+        int num3=0;
+        num3=num1&num2;
+        System.out.println("a&b="+num3);
+        num3=num1|num2;
+        System.out.println("a|b="+num3);
+        num3=num1^num2;
+        System.out.println("a^b="+num3);
+        num3=~num1;
+        System.out.println("~num1="+num3);
+        num3=~num2;
+        System.out.println("~num2="+num3);
+    }
+    
+}
+
+
+=====================*******************========================
+
+
+Q3. Define two numbers and swap them without using third variable.
+
+a. Use the bitwise ^ operator and show the numbers after swapping.
+
+b. Restore the numbers by using (+, -) operator and show the numbers.
+Answer:-
+
+a.
+import java.util.Scanner;
+
+public class Assign3_III_a {
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        System.out.print("Enter the value of i=");
+        int i =input.nextInt();
+        System.out.print("Enter the value of j=");
+        int k =input.nextInt();
+        System.out.println(" Value of i & k before swapping="+ i+" "+k);
+
+        i = i ^ k;
+        k = i ^ k;
+        i = i ^ k;
+        System.out.println("Value of i & k after swapping="+i+" "+k);
+
+    }
+}
+
+b.
+
+import java.util.Scanner;
+
+public class Assign3_III_b {
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        System.out.print("Enter the value of i=");
+        int i =input.nextInt();
+        System.out.print("Enter the value of K=");
+        int k =input.nextInt();
+        System.out.println("Value of i & k before swapping="+ i+" "+k);
+
+        i = i+k;
+        k = i-k;
+        i = i-k;
+        System.out.println("Value of i & k after swapping="+i+" "+k);
+
+    }
+    
+}
+
+====================****************=========================
+

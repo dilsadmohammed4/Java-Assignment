@@ -1,0 +1,203 @@
+1. Create a class Vehicle as follows :
+Data members (All are private) –[Brand, Country_of_Origin, Base_price]
+Methods - input (to input details of vehicle) and display (to show vehicle
+details).
+Create a sub class Car as follows:
+Data members – [Model, speed, Market_price]
+[NB: Market price of a car can be calculated from the Base price and speed. If
+speed is above 80km/hr, market price will be 15% more than the base price
+otherwise market price will be 5% less than the base price.]
+Methods – read (to input car details) and show (to show car details).
+In addition to above methods add more appropriate methods to set the
+required data members.
+Now create objects. Input required data and show the details (Brand,
+Country_of_Origin, Base_price, Model, speed, Market_price) of any car.
+
+Answer:-
+
+import java.util.Scanner;
+import java.lang.*;
+
+class Vehicle {
+
+    Scanner input = new Scanner(System.in);
+
+    private String brandName, country_Of_Origin;
+    private double base_Price;
+
+    public void input() {
+        System.out.print("Enter Brand Name:");
+        brandName = input.nextLine();
+        System.out.print("Enter Country Of Origin:");
+        country_Of_Origin = input.nextLine();
+        System.out.print("Enter Base Price:");
+        base_Price = input.nextDouble();
+    }
+
+    public void display() {
+        System.out.println("=======================");
+        System.out.println("Brand:" + brandName);
+        System.out.println("Country Origin:" + country_Of_Origin);
+        System.out.println("Base Price:" + base_Price);
+    }
+
+    public double BasePrice() {
+        return base_Price;
+    }
+
+}
+
+public class Car extends Vehicle {
+
+    private int speed;
+    private double market_price;
+    private String model;
+    private double base;
+
+    public void read() {
+        System.out.print("Enter Model Name:");
+        model = input.next();
+        System.out.print("Enter Speed:");
+        speed = input.nextInt();
+    }
+
+    public void show() {
+        System.out.println("Model:" + model);
+        System.out.println("Speed:" + speed);
+        if (speed >= 80) {
+            base = BasePrice();
+            market_price = base + base * 15 / 100;
+            System.out.println("Market Price:" + market_price);
+        } else {
+
+            base = BasePrice();
+            market_price = base - base * 5 / 100;
+            System.out.println("Market Price:" + market_price);
+
+        }
+
+    }
+
+    public static void main(String[] args) {
+
+        Car obj = new Car();
+        obj.input();
+        obj.read();
+        obj.display();
+        obj.show();
+    }
+}
+
+=======================================================================
+
+
+2. Create two classes such as Teacher (basic, da, hra, epf, sub_taught)
+and Student (fees_per_sem, course, duration) which are inherited from class
+Person(name, Id, year_of_join). Design appropriate methods to input the data
+as given above whenever required.
+Prepare an annual report for a Teacher showing the details such as Name, Id,
+Subject Taught, Joining year, Basic salary per month, Total net salary received
+per year, Total Epf deposited per year. If [Basic=15500/-, da=110%, hra=15%,
+and epf=12%]
+Inform the student by showing details such as Name, Id, Course Offered,
+Joining year and total fees to be paid if the course duration is 4 years and fees
+per semester is 18000/-.
+
+Answer:-
+
+import java.util.Scanner;
+
+class Person {
+
+    Scanner input = new Scanner(System.in);
+    private int id;
+    private String name, year_of_join;
+
+    public void SetPersonData() {
+        System.out.print("Enter Name:");
+        name = input.nextLine();
+        System.out.print("Enter Id:");
+        id = input.nextInt();
+        System.out.print("Enter Year Of Join:");
+        year_of_join = input.next();
+    }
+
+    public void showPersonData() {
+        System.out.println("=================");
+        System.out.println("Name:" + name);
+        System.out.println("Id:" + id);
+        System.out.println("Year Of Join:" + year_of_join);
+    }
+
+}
+
+class Teacher extends Person {
+    private double basic, DA, HRA, EPF, net_salary, gross_salary;
+    private String sub_Taught;
+
+    public void SetTeacherData() {
+        System.out.print("Enter Basic Salary:");
+        basic = input.nextDouble();
+        System.out.print("Enter the Taught Subject:");
+        sub_Taught = input.next();
+    }
+
+    public void ShowTeacherData() {
+        HRA = basic * 15 / 100;
+        DA = basic * 110 / 100;
+        EPF = basic * 12 / 100;
+        gross_salary = basic + DA + HRA;
+        net_salary = gross_salary + EPF;
+        System.out.println("Basic Salary:" + basic);
+        System.out.println("Subject Taught:" + sub_Taught);
+        System.out.println("Net Salary:" + net_salary);
+
+    }
+}
+
+class Student extends Person {
+    private int fees_per_sem, course_duration;
+    private double total_fee;
+    private String course;
+
+    public void SetStudentData() {
+        System.out.print("Enter Fees Per Sem:");
+        fees_per_sem = input.nextInt();
+        System.out.print("Enter Course:");
+        course = input.next();
+        System.out.print("Enter Course Duration in Year:");
+        course_duration = input.nextInt();
+    }
+
+    public void showStudentData() {
+        total_fee = fees_per_sem * (2 * course_duration);
+        System.out.println("Fees Per Sem:" + fees_per_sem);
+        System.out.println("Course:" + course);
+        System.out.println("Course Duration:" + course_duration);
+        System.out.println("Total Fees:" + total_fee);
+    }
+
+}
+
+public class Annual {
+    public static void main(String[] args) {
+        Teacher obj = new Teacher();
+        Student s = new Student();
+        System.out.println("=====Enter Employee Details======");
+        obj.SetPersonData();
+        obj.SetTeacherData();
+        System.out.println("========Enter Student Data=======");
+        s.SetPersonData();
+        s.SetStudentData();
+        System.out.println("=================");
+        obj.showPersonData();
+        obj.ShowTeacherData();
+        System.out.println("=================");
+        s.showPersonData();
+        s.showStudentData();
+    }
+}
+
+
+
+=======================================================================

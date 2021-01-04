@@ -1,0 +1,241 @@
+Q1.	WAP in Java to design a class Fraction having data members num and denum. Define default constructor, one argument constructor, two argument constructor and a copy constructor to set the values to numerator and denominator of different objects. 
+	Define methods such as show(), add(), subtract(), multiply(), div(), compare(), mixed() and reduce().
+	Create different objects using different constructors given above. Perform the above operations using appropriate methods. Show the result in reduced form of the result fraction after each operation. After reducing if the fraction is an improper fraction then represent it in the form of mixed fraction.
+
+Answer:-
+
+class Fraction {
+    int num, denum;
+
+    public Fraction() {
+        num = 0;
+        denum = 1;
+    }
+
+    public Fraction(int n) {
+        num = n;
+        denum = 1;
+    }
+
+    public Fraction(int p, int q) {
+        num = p;
+        denum = q;
+        Reduce();
+    }
+
+    public Fraction(Fraction other) {
+        num = other.num;
+        denum = other.denum;
+    }
+
+    Fraction Add(Fraction f1) {
+        Fraction d = new Fraction();
+        d.num = (num * f1.denum) + (f1.num * denum);
+        d.denum = denum * f1.denum;
+        return d;
+    }
+
+    Fraction Sub(Fraction f1) {
+        Fraction d = new Fraction();
+        d.num = (num * f1.denum) - (f1.num * denum);
+        d.denum = denum * f1.denum;
+        return d;
+    }
+
+    Fraction Mul(Fraction f1) {
+        Fraction d = new Fraction();
+        d.num = num * f1.num;
+        d.denum = denum * f1.denum;
+        return d;
+    }
+
+    Fraction Div(Fraction f1) {
+        Fraction d = new Fraction();
+        d.num = num * f1.denum;
+        d.denum = denum * f1.num;
+        return d;
+    }
+
+    public void showFraction() {
+        System.out.println(num + "/" + denum);
+    }
+
+    private void Reduce() {
+        int n, d, largest;
+        n = num;
+        d = denum;
+        largest = 1;
+        if (n > d) {
+            largest = n;
+        } else {
+            largest = d;
+        }
+        int gcd = 0;
+        for (int i = largest; i >= 2; i--) {
+            if (num % i == 0 && denum % i == 0) {
+                gcd = i;
+                break;
+            }
+        }
+        if (gcd != 0) {
+            num = num / gcd;
+            denum = denum / gcd;
+        }
+    }
+}
+
+public class FractionDemo {
+    public static void main(String[] args) {
+        Fraction f1 = new Fraction(4, 3);
+        Fraction f2 = new Fraction(1, 2);
+        Fraction f3 = new Fraction();
+        System.out.print("Fraction 1= ");
+        f1.showFraction();
+        System.out.print("Fraction 2= ");
+        f2.showFraction();
+        System.out.print("Fraction 1 & 2 Addition: ");
+        f3 = f1.Add(f2);
+        f3.showFraction();
+        System.out.print("Fraction 1 & 2 Subtraction: ");
+        f3 = f1.Sub(f2);
+        f3.showFraction();
+        System.out.print("Fraction 1 & 2 Multiplication: ");
+        f3 = f1.Mul(f2);
+        f3.showFraction();
+        System.out.print("Fraction 1 & 2 Division: ");
+        f3 = f1.Div(f2);
+        f3.showFraction();
+    }
+}
+
+===================*********************=====================
+
+Use switch Case…
+Q2.	Input two numbers and an operator(+,-,*,/) then calculate the result according to the operator selected.
+Answer:-
+
+import java.util.*;
+
+public class Assign8_II {
+    public static void main(String[] args) {
+        int a, b, n, add, sub, mul;
+        double div;
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter The First Number:");
+        a = input.nextInt();
+        System.out.print("Enter The Second Number:");
+        b = input.nextInt();
+        while (true) {
+            System.out.println("1. +");
+            System.out.println("2. -");
+            System.out.println("3. *");
+            System.out.println("4. /");
+            System.out.println("5. Exit");
+            System.out.print("Enter The Number To Perform The Task:");
+            n = input.nextInt();
+            switch (n) {
+                case 1:
+                    add = a + b;
+                    System.out.println("A + B = " + add);
+                    break;
+
+                case 2:
+                    sub = a - b;
+                    System.out.println("A - B = " + sub);
+                    break;
+
+                case 3:
+                    mul = a * b;
+                    System.out.println("A * B = " + mul);
+                    break;
+
+                case 4:
+                    div = a / b;
+                    System.out.println("A / B = " + div);
+                    break;
+                case 5:
+                    System.exit(0);
+
+                default:
+                    System.out.println("The Input Is Wrong");
+                    break;
+            }
+        }
+    }
+}
+
+
+===================*********************=====================
+
+Q3.	Input a number and display it in words. Ex- 5012(Five Zero One Two).
+Answer:-
+
+import java.util.Scanner;
+
+public class Assign8_III {
+    static void printValue(char digit) {
+        switch (digit) {
+
+            case '0':
+                System.out.print("Zero ");
+                break;
+
+            case '1':
+                System.out.print("One ");
+                break;
+
+            case '2':
+                System.out.print("Two ");
+                break;
+
+            case '3':
+                System.out.print("Three ");
+                break;
+
+            case '4':
+                System.out.print("Four ");
+                break;
+
+            case '5':
+                System.out.print("Five ");
+                break;
+
+            case '6':
+                System.out.print("Six ");
+                break;
+
+            case '7':
+                System.out.print("Seven ");
+                break;
+
+            case '8':
+                System.out.print("Eight ");
+                break;
+
+            case '9':
+                System.out.print("Nine ");
+                break;
+        }
+    }
+
+    static void printWord(String Num) {
+        int i;
+
+        for (i = 0; i < Num.length(); i++) {
+
+            printValue(Num.charAt(i));
+        }
+    }
+
+    public static void main(String[] args) {
+        String Num;
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter The NUMBER:");
+        Num = input.next();
+        printWord(Num);
+    }
+}
+
+
+
+===================*********************=====================

@@ -1,0 +1,176 @@
+1. Create a class Complex having member variables real and imag. Also create
+constructors and methods as follows:
+    a. Complex()
+    b. Complex(int,int)
+    c. Complex(Complex)
+    d. void showComplex()
+    e. Complex addComplex(Complex)
+    f. Complex substractComplex(Complex)
+    g. Complex multiplyComplex(Complex)
+Write a java program to create objects of above class and perform operations
+as the methods specified above.
+Answer:-
+
+import java.util.*;
+
+class ArrayMain {
+    int size = 6;
+    int array[] = new int[size];
+
+    ArrayMain() {
+        array[0] = 1;
+        array[1] = 2;
+        array[2] = 3;
+        array[3] = 4;
+        array[4] = 6;
+        array[5] = 5;
+    }
+
+    public void Display() {
+        int i;
+        for (i = 0; i < size; i++) {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
+    }
+
+    public void SumAvg() {
+        int sum = 0, avg = 0, i;
+        for (i = 0; i < size; i++) {
+            sum = sum + array[i];
+            avg = sum / size;
+        }
+        System.out.println("Sum Is:" + sum);
+        System.out.println("Avarage Is:" + avg);
+    }
+
+    public void swapMaxMinArray() {
+        int temp, i;
+        int max = array[0];
+        int min = array[0];
+        for (i = 0; i < size; i++) {
+            if (max < array[i]) {
+                max = array[i];
+            } else if (min > array[i]) {
+                min = array[i];
+            }
+        }
+        System.out.println("=============");
+        System.out.println("Before swap");
+        System.out.println("Maximun:" + max);
+        System.out.println("Minimum:" + min);
+        temp = min;
+        min = max;
+        max = temp;
+        System.out.println("=============");
+        System.out.println("After swap");
+        System.out.println("Maximun:" + max);
+        System.out.println("Minimum:" + min);
+        System.out.println("=============");
+    }
+
+    public void Occurence() {
+        int i, num, count = 0;
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the one Array element to cheak Occurrence:");
+        num = input.nextInt();
+        for (i = 0; i < size; i++) {
+            if (array[i] == num) {
+                count++;
+            }
+        }
+        System.out.println("Number Is:" + num);
+        System.out.println("Occurrence:" + count + " Times");
+    }
+}
+
+public class ArrayOperation {
+    public static void main(String[] args) {
+        ArrayMain z = new ArrayMain();
+        z.Display();
+        z.SumAvg();
+        z.swapMaxMinArray();
+        z.Occurence();
+    }
+}
+
+===================*********************=====================
+
+
+2. WAP to create a class Array having member variables as an integer array and
+it’s size.
+Allocate memory for the Array as per the size specified and initialize it to zero
+using constructor.
+Design methods to perform the following operations on the array:
+Input required elements for the array.
+=> To display the array elements.
+=> Calculate sum and average of elements.
+=> Swap the max and min elements.
+=> Find the occurrence of different elements.
+=> Make three digit numbers by taking three consecutive indexes starting from
+zero to end. Also find the maximum number out of these new numbers.
+Answer:-
+
+class Complex {
+    int real;
+    int imag;
+
+    Complex() {
+
+    }
+
+    Complex(int x, int y) {
+        real = x;
+        imag = y;
+    }
+
+    public void showData() {
+        System.out.println(real + "+" + imag + "i");
+    }
+
+    Complex Add(Complex z) {
+        Complex r = new Complex();
+        r.real = real + z.real;
+        r.imag = imag + z.imag;
+        return r;
+    }
+
+    Complex Sub(Complex z) {
+        Complex r = new Complex();
+        r.real = real - z.real;
+        r.imag = imag - z.imag;
+        return r;
+    }
+
+    Complex Mul(Complex z) {
+        Complex r = new Complex();
+        r.real = real * z.real;
+        r.imag = imag * z.imag;
+        return r;
+    }
+}
+
+public class ComplexNumber {
+    public static void main(String[] args) {
+        Complex a1 = new Complex(4, 5);
+        Complex a2 = new Complex(9, 10);
+        Complex a3 = new Complex();
+        System.out.print("First Complex Number:");
+        a1.showData();
+        System.out.print("Second Complex Number:");
+        a2.showData();
+        System.out.print("Addition of two Complex Number:");
+        a3 = a1.Add(a2);
+        a3.showData();
+        System.out.print("Subtraction of two Complex Number:");
+        a3 = a1.Sub(a2);
+        a3.showData();
+        System.out.print("Multiplication of two Complex Number:");
+        a3 = a1.Mul(a2);
+        a3.showData();
+    }
+}
+
+
+
+===================*********************=====================

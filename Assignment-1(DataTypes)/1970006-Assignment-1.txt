@@ -1,0 +1,83 @@
+
+                 
+Assign1_Qn1	//Write a simple Java program to print three characteristics of Object Oriented
+Programming like Java.
+Answer:-
+public class Charecteristics {
+    public static void main(String[] args) {
+        System.out.println("Three charecteristics of OOPS:-");
+        System.out.println("1.Polymorphism");
+        System.out.println("2.Inheritance");
+        System.out.println("3.Encapsulation");
+    }
+    
+}
+
+===========*******==============
+
+Assign1_Qn2	//Write a Java program to print a message “Welcome (Your name here) to Java
+Programming”, where your name is stored in a variable.
+Answer:
+public class Message {
+    public static void main(String[] args) {
+        String name="Dilsad";
+        System.out.println("Welcome "+name+" to Java Programming.");
+    }
+}
+
+===========*******==============
+
+Assign1_Qn3	//Write a program to declare different variables of different data types used in Java
+and also show the values that you have assigned.  
+Answer:
+public class ShowDataTypes {
+    public static void main(String[] args) {
+        int myNum = 5;
+        float myFloatNum = 5.99f;
+        double myDouble=4.567;
+        boolean myBool=true;
+        char myChar ='D';
+        String myText = "Hello to Java"; 
+        System.out.println("Int="+myNum);
+        System.out.println("Float="+myFloatNum);
+        System.out.println("Double="+myDouble);
+        System.out.println("Boolean="+myBool);
+        System.out.println("Char="+myChar);
+        System.out.println("String="+myText);
+    }
+    
+}
+
+===========*******==============
+
+Assign1_Qn4	//Declare two integer variables then apply +, -, *, /, ^, % operations on them using
+separate methods. Also declare suitable variable to store the result.
+Answer:
+import java.lang.Math;
+public class OperationOnDataTypes {
+    public static void main(String[] args) {
+        float div,rem;
+        int sum,sub,mul,pow;
+        int a=15;
+        int b=6;
+        sum=a+b;
+        sub=a-b;
+        mul=a*b;
+        div=a/b;
+        rem=a%b;
+        System.out.println("Sum="+sum);
+        System.out.println("Subtraction="+sub);
+        System.out.println("Multiplication="+mul);
+        System.out.println("Division="+div);
+        System.out.println("Value="+Math.pow(a, b));
+        System.out.println("Remainder"+rem);
+    }
+    
+}
+
+
+===========*******==============
+
+
+
+

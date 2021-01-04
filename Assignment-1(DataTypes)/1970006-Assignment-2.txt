@@ -1,0 +1,144 @@
+
+                 
+Assign2_Qn1	//The basic salary of an employee is 12000. WAP in JAVA to compute gross and
+net salary of that employee where HRA=15%, and DA=110%, PF=12%.
+Answer:-
+public class BasicSalary {
+    public static void main(String[] args) {
+        String name="Dilsad Mohammed";
+        System.out.println("Employee Name:"+name);
+        int Basic_Salary=12000;
+        double da,hra,pf,Gross_salary,Net_salary;
+        da=Basic_Salary*0.15;
+        hra=Basic_Salary*1.1;
+        pf=Basic_Salary*0.12;
+        Gross_salary=Basic_Salary+da+hra;
+        Net_salary=Gross_salary-pf;
+        System.out.println("Gross Salary Is="+Gross_salary);
+        System.out.println("Net Salary Is:"+Net_salary);
+    }
+    
+}
+
+===========*******==============
+
+Assign2_Qn2	//Define a class CalcInt. Declare variables required to calculate simple interest.
+Also define method)
+to set principal, time and rate of interest.
+b) to calculate simple interest.
+c) to display the loan details.
+Try to modify the above program by making the method private that is used
+to calculate simple interest.
+Answer:
+
+public class Calcint {
+    public static int p,r,t;
+    public static float interest;
+    public static void SetData()
+    {
+        p=200000;
+        r=4;
+        t=3;
+        interest=(p*r*t)/100;
+    }
+    public static void ShowData()
+    {
+        System.out.println("Amount Is="+p+" rupees.");
+        System.out.println("Rate OF interest is= "+r);
+        System.out.println("Time:"+t+"(in Year)");
+        System.out.println("Interest IS:"+interest);
+        
+    }
+    public static void main(String[] args) {
+       
+        SetData();
+        ShowData();
+    }
+    
+}
+===========*******==============
+
+Assign2_Qn3	//WAP in Java to define variables to store your name, current age, previous age
+and next age. Define following methods :
+a) To set your name and current age.
+b) That can calculate and set your new age after the years that is equal to last
+digit of your current age.
+c) That can calculate and set your new age before the years that is equal to
+first digit of your age.
+d) To show your name along with current, previous and next age.  
+Answer:
+public class ShowAge {
+    public static void ShowData()
+    {
+        String name;
+        int Current_age;
+        int Previous_age;
+        int Next_age;
+        name="Dilsad Mohammed";
+        Current_age=21;
+        Previous_age=21-2;
+        Next_age=21+1;
+        System.out.println("Name="+name);
+        System.out.println("Current age is="+Current_age);
+        System.out.println("Previous age is="+Previous_age);
+        System.out.println("Next age is="+Next_age);
+    }
+    public static void main(String[] args) {
+        
+        ShowData();
+    }
+    
+}
+
+
+===========*******==============
+
+Assign2_Qn4	//WAP to design a class AreaOfShapes. Define variables for all the shapes given
+below. Define separate methods for different figures.
+Each method should do the following tasks- 
+a) set required data.
+b) calculate area of a shape and 
+c) display the details of that shape.
+The geometric shapes are- a) circle, b) triangle, c) rectangle.
+Answer:
+public class AreaOfShapes {
+    public static int radius;
+    public static int R_height,width;
+    public static int T_height,base;
+    public static double C_area,T_area,R_area;
+    public static void setdata()
+    {
+        radius=45;
+        R_height=2;
+        width=6;
+        T_height=10;
+        base=20;
+    }
+    public static void calculate()
+    {
+        C_area=3.141*radius*radius;
+        R_area=width*R_height;
+        T_area=0.5*base*T_height;
+    }
+    public static void ShowArea() {
+        System.out.println("Radius of circle is="+radius);
+        System.out.println("Area Of Circle="+C_area);
+        System.out.println("Height and width of Rectangle is="+R_height+" "+width);
+        System.out.println("Area Of Rectangle="+R_area);
+        System.out.println("Height and Base of Triangle is="+T_height+" "+base);
+        System.out.println("Area of Triangle="+T_area);
+    }
+    public static void main(String[] args) {
+        setdata();
+        calculate();
+        ShowArea();
+    }
+    
+}
+
+
+===========*******==============
+
+
+
+

@@ -1,0 +1,192 @@
+
+Q1. Write a java program to find the sum of digits of a given number.
+Answer:-
+
+import java.util.Scanner;
+public class Assign6_I {
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        int num,sum=0,rem;
+        System.out.println("Enter the number:");
+        num=input.nextInt();
+        while(num>0){
+            rem=num%10;
+            num=num/10;
+            sum=sum+rem;
+        }
+        System.out.println("Sum of digit="+sum);
+        
+    }
+}
+
+==============*************=======================
+
+Q2. In the above program count and print the digits in the result number which are also 
+present in the original number.
+Answer:-
+
+import java.util.*;
+
+public class Assign6_II {
+    public static void main(String args[])
+	{
+        Scanner input=new Scanner(System.in);
+        int number,count=0;
+        System.out.println("Enter the Number:");
+        number=input.nextInt();
+        System.out.println("Result Number Is:"+number);
+        while(number>0){
+            number=number/10;
+            count++;
+        }
+        System.out.println("Totak number of digit:"+count);
+	}
+}
+
+==============*************=======================
+
+Q3. WAP in JAVA to print the factorials of a given number.
+Answer:-
+
+import java.util.Scanner;
+
+public class Assign6_III {
+    public static int fact(int num){
+        int i,r=1;
+        for(i=2;i<=num;i++)
+            r=r*i;
+        return r;
+        
+    }
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        int num;
+        System.out.print("Enter the number:");
+        num=input.nextInt();
+        System.out.println("Factorial Is="+fact(num));
+    }
+}
+
+==============*************=======================
+
+Q4. Write a java program to check whether a number is palindrome or not.
+Answer:-
+
+import java.util.Scanner;
+
+public class Assign6_IV {
+    public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in);
+        System.out.print("Enter the number you want to cheak palindrome or not:");
+        int n=scan.nextInt();
+        int r,s=0;
+        int t=n;
+        while(n>0)
+                {
+                    r=n%10;
+                    n=n/10;
+                    s=s*10+r;
+                }
+        if(t==s)
+            System.out.println("It is a Palindrome number.");
+            else
+            System.out.println("It is not a Paliondrome number.");
+    }
+    
+    
+}
+
+
+==============*************=======================
+
+Q5. Write a java program to check whether given number is an Armstrong number or not.
+Answer:-
+
+import java.util.Scanner;
+
+public class Assign6_V {
+       public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in);
+        System.out.print("Enter the number to cheak armstrong number or not:");
+        int num=scan.nextInt();
+        int sum=0,r,c;
+        int temp=num;
+        while(num>0)
+        {
+            r=num%10;
+            c=r*r*r;
+            sum=sum+c;
+            num=num/10;
+        }
+        if(temp==sum)
+            System.out.println("Number is armstrong.");
+        else
+            System.out.println("Number is not armstrong.");
+        
+    } 
+    
+}
+
+
+==============*************=======================
+
+Q6. Write a java program to generate a Fibonacci series up to nth term.
+Answer:-
+
+import java.util.Scanner;
+
+public class Assign6_VI {
+    public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in);
+        System.out.print("Enter the range for printing fibonacci series:");
+        int n=scan.nextInt();
+        int a=1,b=1,k=0;
+        System.out.print("1 1 ");
+        while(k<=n/2)
+        {
+            k=a+b;
+            System.out.print(k +" ");
+            a=b;
+            b=k;
+        }
+        
+    }
+    
+}
+
+
+==============*************=======================
+
+Q7. Input 10 numbers and find out largest and smallest.
+Answer:-
+
+import java.util.Scanner;
+
+public class Assign6_VII {
+    public static void main(String[] args) {
+    
+        int smallest = 0;
+        int large = 0;
+        int num;
+        System.out.println("How many number you want to enter:");
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        System.out.println("Enter "+n+" number:");
+        num = input.nextInt();
+        smallest = num; 
+        for (int i =1;i < n; i++) {
+            num = input.nextInt();
+            if (num > large) {
+            large = num;
+            }
+            if (num < smallest) {
+            smallest = num;
+            }
+        }
+        System.out.println("the largest is:" + large);
+        System.out.println("Smallest no is : " + smallest);
+    }
+}
+
+==============*************=======================
+
